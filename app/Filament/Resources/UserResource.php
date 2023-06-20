@@ -23,6 +23,13 @@ class UserResource extends Resource
     {
         return $form
             ->schema([
+                Forms\Components\Select::make('admin')
+                ->options([  
+                    1 => 'Admin',
+                    0 => "User",
+                ])
+                ->default(0)
+                ->required(),
                 Forms\Components\TextInput::make('name')
                     ->required()
                     ->maxLength(255),
