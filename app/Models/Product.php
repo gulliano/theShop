@@ -6,7 +6,6 @@ use App\Models\User;
 use App\Models\Favoris;
 use App\Models\Category;
 use App\Models\Commentaire;
-use App\Models\ProductImage;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -17,8 +16,14 @@ class Product extends Model
                             'user_id',
                             'name', 
                             'description',
-                            'prix'] ;
+                            'prix',
+                            'defaultImage',
+                            'carouselImage' ] ;
     use HasFactory;
+
+    protected $casts = [
+        'carouselImage' => 'array',
+    ];
 
    /**
     * Get the user that owns the Product
@@ -41,10 +46,7 @@ class Product extends Model
    {
        return $this->hasMany(Favoris::class);
    }
-   public function images(): HasMany
-   {
-       return $this->hasMany(ProductImage::class);
-   }
+
    public function user(): BelongsTo
    {
        return $this->belongsTo(User::class);
