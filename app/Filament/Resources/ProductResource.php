@@ -35,10 +35,10 @@ class ProductResource extends Resource
                 Forms\Components\Textarea::make('description')
                     ->maxLength(65535),
                 Forms\Components\FileUpload::make('defaultImage'),
-               /* Forms\Components\FileUpload::make('carouselImage')
+                Forms\Components\FileUpload::make('carouselImage')
                         ->multiple()
                         ->minFiles(1)
-                        ->maxFiles(4),*/
+                        ->maxFiles(4),
                 Forms\Components\TextInput::make('prix'),
             ]);
     }
@@ -49,8 +49,11 @@ class ProductResource extends Resource
             ->columns([
                 Tables\Columns\TextColumn::make('category.name'),
                 Tables\Columns\TextColumn::make('user.name'),
+                Tables\Columns\ImageColumn::make('defaultImage')
+                    ->circular(),
                 Tables\Columns\TextColumn::make('name'),
                 Tables\Columns\TextColumn::make('prix'),
+                
                 Tables\Columns\TextColumn::make('created_at')
                     ->dateTime(),
                 Tables\Columns\TextColumn::make('updated_at')
