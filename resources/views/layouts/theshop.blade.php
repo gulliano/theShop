@@ -7,6 +7,7 @@
     <title>The Shop</title>
     @livewireStyles
     @vite('resources/css/app.css')
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.6/flowbite.min.css" rel="stylesheet" />
 </head>
 <body>
     <x-navbar />
@@ -15,5 +16,6 @@
     
 
     @livewireScripts
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.6/flowbite.min.js"></script>
 </body>
 </html>

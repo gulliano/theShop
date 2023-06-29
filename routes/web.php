@@ -1,7 +1,8 @@
 <?php
 
-use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ProductController;
+use App\Http\Controllers\ProfileController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,10 +14,15 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-
+/*
 Route::get('/', function () {
     return view('welcome');
-});
+});*/
+
+Route::get('/', [ProductController::class, 'index'])->name('accueil') ;
+Route::get('/category/{id}', [ProductController::class, 'index'])->name('category') ;
+Route::get('/detail/{product}', [ProductController::class, 'detail'])->name('detail') ;
+
 
 Route::get('/dashboard', function () {
     return view('dashboard');

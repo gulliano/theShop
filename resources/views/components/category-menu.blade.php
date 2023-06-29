@@ -9,7 +9,7 @@
           <!-- Nav Links -->
           <ul class="hidden md:flex px-4 mx-auto font-semibold font-heading space-x-12">
             @forelse ( $categories as $category )
-                <li><a class="hover:text-orange-600 text-gray-900" href="#">{{$category->name}}</a></li>
+                <li><a class="hover:text-orange-600 text-gray-900" href="{{route('category',$category->id)}}">{{$category->name}}</a></li>
  
             @empty
                 
