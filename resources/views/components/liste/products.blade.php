@@ -15,7 +15,7 @@
             
             <div class="w-full bg-white rounded-lg sahdow-lg overflow-hidden flex flex-col justify-center items-center">
                 <div>
-                    <img class="object-center object-cover h-auto w-full" src="{{Storage::url($product->defaultImage)}}" alt="photo">
+                  <a href="{{route('detail', $product)}}"><img class="object-center object-cover h-auto w-full" src="{{Storage::url($product->defaultImage)}}" alt="photo"></a> 
                 </div>
                 <div class="text-center py-8 sm:py-6">
                     <p class="text-xl text-gray-700 font-bold mb-2">{{$product->name}}</p>
