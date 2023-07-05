@@ -27,8 +27,14 @@
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-6">
     <div class="flex flex-col md:flex-row -mx-4">
      <!-- carousel -->
-   
-     <x-carousel-detail2 :images="$product->carouselImage" />
+    @if (count($product->carouselImage) > 1)
+        <x-carousel-detail2 :images="$product->carouselImage" />
+    @else
+      <div class="md:flex-1 px-4">
+        <img src="{{Storage::url($product->defaultImage)}}" alt="">
+      </div>
+    @endif
+     
       
       <div class="md:flex-1 px-4">
         <h2 class="mb-2 leading-tight tracking-tight font-bold text-gray-800 text-2xl md:text-3xl">Lorem ipsum dolor, sit amet consectetur, adipisicing elit.</h2>

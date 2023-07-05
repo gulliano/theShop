@@ -14,6 +14,7 @@ class AddCart extends Component
     public $quantity = 1 ;
  
 
+
     public function add()
     {
         # code...
@@ -43,7 +44,10 @@ class AddCart extends Component
 
     }
 
-
+    public function goToCart()
+    {
+        return redirect(route('cart')) ;
+    }
     
     public function render()
     {
